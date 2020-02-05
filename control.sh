@@ -1,5 +1,5 @@
 #!/bin/bash
-readonly PYTHONENV="./pyenv"
+readonly PYTHONENV=".pyenv"
 if [ "$1" = "init" ]; then
     if [ -f "/tmp/minitwit.db" ]; then 
         echo "Database already exists."
