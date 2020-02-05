@@ -1,20 +1,17 @@
 #!/bin/bash
-readonly PYTHONENV="./dependencies/python-env/bin/activate"
+readonly PYTHONENV="./pyenv"
 if [ "$1" = "init" ]; then
-
     if [ -f "/tmp/minitwit.db" ]; then 
         echo "Database already exists."
         exit 1
     fi
     echo "Putting a database to /tmp/minitwit.db..."
-    source $PYTHONENV
+    source "$PYTHONENV/bin/activate"
     python -c"from minitwit import init_db;init_db()"
-    deactivate
-elif [ "$1" = "start" ]; then
+elif [ $1 = "start" ]; then
     echo "Starting minitwit..."
-    source $PYTHONENV
+    source "$PYTHONENV/bin/activate"
     nohup python minitwit.py > /tmp/out.log 2>&1 &
-    deactivate
     echo $! > /tmp/minitwit.pid
 elif [ "$1" = "stop" ]; then
     echo "Stopping minitwit..."
@@ -28,5 +25,3 @@ elif [ "$1" = "flag" ]; then
 else
   echo "I do not know this command..."
 fi
-
-
