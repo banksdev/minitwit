@@ -1,11 +1,11 @@
+#!/bin/bash
 if [ $1 = "init" ]; then
-
     if [ -f "/tmp/minitwit.db" ]; then 
         echo "Database already exists."
         exit 1
     fi
     echo "Putting a database to /tmp/minitwit.db..."
-    python -c"from minitwit import init_db;init_db()"
+    python3 -c "from minitwit import init_db;init_db()"
 elif [ $1 = "start" ]; then
     echo "Starting minitwit..."
     nohup python minitwit.py > /tmp/out.log 2>&1 &
