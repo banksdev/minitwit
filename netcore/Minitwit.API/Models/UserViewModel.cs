@@ -1,0 +1,12 @@
+using System;
+
+namespace Minitwit.API.Models
+{
+    public class UserViewModel
+    {
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public string Mail { get; set; }
+        public string Password { get; set; }
+    }
+}

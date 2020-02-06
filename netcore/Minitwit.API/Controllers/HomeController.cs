@@ -25,7 +25,14 @@ namespace Minitwit.API.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            var user = new UserViewModel()
+            {
+                Mail = "maki@itu.dk",
+                Password = "maki",
+                UserId = 1,
+                Name = "MAKI"
+            };
+            return View(user);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
