@@ -12,11 +12,6 @@ RUN pip3 install flask
 
 COPY . /app
 WORKDIR /app
-# CMD [ "./control.sh", "init" ] 
-# CMD "ls"
-# CMD [ "python", "--version" ]
-# CMD [ "ls" ]
+
 RUN ./control.sh init
 ENTRYPOINT [ "python3", "minitwit.py" ]
-# CMD "python control.sh init"
-#"python -c 'from minitwit import init_db; init_db()'", 
