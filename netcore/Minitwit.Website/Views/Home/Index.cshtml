@@ -1,0 +1,34 @@
+﻿@model Minitwit.Website.Models.MessagesViewModel
+
+<h2>Public Timeline</h2>
+<ul class=messages>
+    @if (Minitwit.Website.CookieHandler.LoggedIn(Context.Request))
+    {
+        <div class=twitbox>
+            <h3>What's on your mind @Model.User.Username?</h3>
+            <form action="/Home/AddMessage" method=post>
+                <p>
+                    <input type=text name=content size=60>
+                    <!--
+                    -->
+                    <input type=submit value="Share">
+            </form>
+        </div>
+    }
+
+    @if (Model.Messages.Count == 0)
+    {
+        <em>There's no message so far.</em>
+    }
+    @foreach (var msg in Model.Messages)
+    {
+        <li>
+            <img src="@msg.User.Email|gravatar(size=48)" alt="Alternate Text" />
+            <p>
+                <strong><a href="#">@msg.User.Username</a></strong>
+                @msg.Content
+                <small>&mdash; @msg.PublishedTime </small>
+            </p>
+        </li>
+    }
+</ul>

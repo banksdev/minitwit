@@ -1,0 +1,8 @@
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\bin\Debug\netcoreapp3.1\Minitwit.Models.deps.json
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\bin\Debug\netcoreapp3.1\Minitwit.Models.dll
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\bin\Debug\netcoreapp3.1\Minitwit.Models.pdb
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\obj\Debug\netcoreapp3.1\Minitwit.Models.csprojAssemblyReference.cache
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\obj\Debug\netcoreapp3.1\Minitwit.Models.AssemblyInfoInputs.cache
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\obj\Debug\netcoreapp3.1\Minitwit.Models.AssemblyInfo.cs
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\obj\Debug\netcoreapp3.1\Minitwit.Models.dll
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Models\obj\Debug\netcoreapp3.1\Minitwit.Models.pdb
