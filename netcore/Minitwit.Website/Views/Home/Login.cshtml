@@ -1,6 +1,22 @@
 ﻿@model Minitwit.Website.Models.LoginViewModel
 
+
+@{ 
+    var data = ViewData["Errors"];
+    ViewData["Title"] = "Sign Up";
+
+}
+
 <h2>Sign In</h2>
+
+@if(data != null)
+{
+    @foreach(var error in data as List<string>)
+    {
+        <div class=error><strong>Error:</strong> @error </div>
+    }
+}
+
 <form action="" method=post>
     @Html.AntiForgeryToken()
     <dl>

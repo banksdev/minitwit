@@ -28,5 +28,11 @@ namespace Minitwit.Website
             return true;
         }
 
+        public static bool LoggedIn(IRequestCookieCollection req)
+        {
+            return req["user"] != null;
+        }
+
+        
     }
 }

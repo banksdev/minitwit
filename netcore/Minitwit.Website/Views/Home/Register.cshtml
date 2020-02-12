@@ -1,12 +1,20 @@
 ﻿@model Minitwit.Website.Models.RegisterViewModel
 
-@{ 
+@{
     ViewData["Title"] = "Sign Up";
+    var data = ViewData["Errors"];
 }
 
-
 <h2>Sign Up</h2>
-  @*{% if error %}<div class=error><strong>Error:</strong> {{ error }}</div>{% endif %}*@
+
+@if (data != null)
+{
+    @foreach (var error in data as List<string>)
+    {
+        <div class=error><strong>Error:</strong> @error </div>
+    }
+}
+
 <form action="" method=post>
     @Html.AntiForgeryToken()
     <dl>

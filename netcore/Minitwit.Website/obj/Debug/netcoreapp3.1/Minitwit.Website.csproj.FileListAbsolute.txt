@@ -163,3 +163,4 @@ C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Website\obj\Debug\
 C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Website\obj\Debug\netcoreapp3.1\Minitwit.Website.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\mrkis\Documents\ITU\DevOps\minitwit\netcore\Minitwit.Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Private.cshtml.g.cs
