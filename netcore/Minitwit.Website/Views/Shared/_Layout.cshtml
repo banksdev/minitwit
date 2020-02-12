@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Minitwit.API</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="page">
+        <h1>MiniTwit</h1>
+        <div class="navigation">
+            @if (Minitwit.Website.CookieHandler.LoggedIn(Context.Request))
+            {
+                <a asp-area="" asp-controller="Home" asp-action="Index">My Timeline</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Public Timeline</a>
+                <a asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+            }
+            else
+            {
+                <a asp-area="" asp-controller="Home" asp-action="Index">Public Timeline</a>
+                <a asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                <a asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+            }
+
+        </div>
+        <div class="body">
+                @RenderBody()
+        </div>
+
+        <div class=footer>
+            MiniTwit &mdash; A Flask Application &copy; 2020 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </div>
+   
+    @*<
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)*@
+</body>
+</html>

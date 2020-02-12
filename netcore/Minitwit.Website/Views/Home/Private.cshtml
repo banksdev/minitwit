@@ -1,0 +1,51 @@
+﻿@model Minitwit.Website.Models.MessagesViewModel
+
+<h2>Public Timeline</h2>
+<ul class=messages>
+    @if (Minitwit.Website.CookieHandler.LoggedIn(Context.Request.Cookies))
+    {
+        <div class=twitbox>
+            <h3>What's on your mind @Model.User?</h3>
+            <form action="/Home/AddMessage" method=post>
+                <p>
+                    <input type=text name=content size=60>
+                    <!--
+                    -->
+                    <input type=submit value="Share">
+            </form>
+        </div>
+    }
+
+    @if (Model.Messages.Count == 0)
+    {
+        <em>There's no message so far.</em>
+    }
+    @foreach (var msg in Model.Messages)
+    {   
+<li>
+    <img src="@msg.User.Email|gravatar(size=48)" alt="Alternate Text" />
+    @if (Minitwit.Website.CookieHandler.LoggedIn(Context.Request.Cookies))
+    {
+        @if(!Model.IsMe(Context.Request.Cookies, msg.User)) { 
+            @if (Model.FollowingHelper(Context.Request.Cookies, msg.User))
+            {
+                <form action="/home/follow" method=post>
+                 @Html.AntiForgeryToken()
+                    <input type="hidden" name="personToFollow" value="@msg.User.UserId" />
+                    <input type="submit" value="Follow">
+                </form>
+            }
+            else
+            {
+                <p>You are already following!</p>
+            }
+        }
+    }
+    <p>
+        <strong><a href="#">@msg.User.Username</a></strong>
+        @msg.Content
+        <small>&mdash; @msg.PublishedTime </small>
+    </p>
+</li>
+    }
+</ul>
