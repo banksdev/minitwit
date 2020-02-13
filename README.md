@@ -1,3 +1,16 @@
+# MiniTwit
+
+## Run
+To run the app with docker-compose:
+```bash
+cd netcore
+docker-compose build
+docker-compose up
+```
+**Note!** The database has to be updated first. Preferably first run database container, then update database and after that run compose.
+```bash
+dotnet ef database update --project $(pwd)/netcore/Minitwit.DataAccessLayer/Minitwit.DataAccessLayer.csproj
+```
 
                         / MiniTwit /
 
