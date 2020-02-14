@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  minitwit1-web:
+    container_name: dev
+    ports:
+      - "8080:5000"
+    image: minitwit1

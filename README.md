@@ -37,3 +37,22 @@ dotnet ef database update --project $(pwd)/netcore/Minitwit.DataAccessLayer/Mini
 
       You betcha.  Run the `minitwit_tests.py` file to
       see the tests pass.
+
+
+## Run Docker image
+``` bash
+ #To build the image 
+ docker build -t minitwit1 .
+
+ # To run the docker image
+ docker run --name "dev" -d -p 8080:5000 minitwit1
+
+  # To connect to the docker image
+  docker exec -it dev /bin/bash
+
+  # To stop docker container
+  docker container stop dev
+
+  # To remove docker container 
+  docker container prune
+```

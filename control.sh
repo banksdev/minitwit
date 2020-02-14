@@ -1,17 +1,14 @@
 #!/bin/bash
-readonly PYTHONENV=".pyenv"
-if [ "$1" = "init" ]; then
+if [ $1 = "init" ]; then
     if [ -f "/tmp/minitwit.db" ]; then 
         echo "Database already exists."
         exit 1
     fi
     echo "Putting a database to /tmp/minitwit.db..."
-    source "$PYTHONENV/bin/activate"
-    python -c"from minitwit import init_db;init_db()"
+    python3 -c "from minitwit import init_db;init_db()"
 elif [ $1 = "start" ]; then
     echo "Starting minitwit..."
-    source "$PYTHONENV/bin/activate"
-    nohup python minitwit.py > /tmp/out.log 2>&1 &
+    nohup python3 minitwit.py > /tmp/out.log 2>&1 &
     echo $! > /tmp/minitwit.pid
 elif [ "$1" = "stop" ]; then
     echo "Stopping minitwit..."
