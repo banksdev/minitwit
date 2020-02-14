@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  minitwit:
+    build: .
+    ports:
+      - "8080:80"
+    
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "11433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "p@55w0rd"
+    volumes:
+      - /var/opt/mssql:/tmp/mssql
+      - /var/opt/sqlserver:/tmp/sqlserver
+    healthcheck:
+      test: [ "CMD", "sqlcmd", "-U", "sa", "-P", "p@55w0rd", "-Q", "select 1" ]
+      interval: 1s
+      retries: 20
